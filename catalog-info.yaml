@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: faa4uti3p-nodejs-gitops
+  description: This is GitOps manifest for faa4uti3p-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=faa4uti3p-nodejs
+    backstage.io/kubernetes-id: faa4uti3p-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: faa4uti3p-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:faa4uti3p-nodejs
